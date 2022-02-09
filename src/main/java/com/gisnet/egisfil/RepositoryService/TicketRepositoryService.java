@@ -49,6 +49,16 @@ public class TicketRepositoryService implements TicketService{
        }
        return lista;
     }
+    
+    @Override
+    public List<Ticket> findByTipo_Servicio_enAtencion(String tipo_servicio,String id_sucursal) {
+       List<Ticket> lista = new ArrayList<>();
+       Iterator it = repo.findByTipo_Servicio_enAtencion(tipo_servicio,id_sucursal).iterator();
+       while(it.hasNext()){
+           lista.add((Ticket)it.next());
+       }
+       return lista;
+    }
 
     @Override
     public void delete(Ticket ticket) {

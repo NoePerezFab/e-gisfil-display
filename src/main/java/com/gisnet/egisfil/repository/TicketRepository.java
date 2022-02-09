@@ -13,4 +13,7 @@ public interface TicketRepository extends CouchbaseRepository<Ticket, String>{
     
     @Query("#{#n1ql.selectEntity} WHERE  `tipo_Servicio` = '#{[0]}' AND `id_sucursal` = '#{[1]}' AND `status` = 1 AND #{#n1ql.filter} ")
     public List<Ticket> findByTipo_Servicio(String tipo_servicio, String id_sucursal);
+    
+    @Query("#{#n1ql.selectEntity} WHERE  `tipo_Servicio` = '#{[0]}' AND `id_sucursal` = '#{[1]}' AND `status` = 2 AND #{#n1ql.filter} ")
+    public List<Ticket> findByTipo_Servicio_enAtencion(String tipo_servicio, String id_sucursal);
 }
