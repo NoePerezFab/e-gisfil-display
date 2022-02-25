@@ -52,7 +52,8 @@ public class DisplayController {
         }else{
             esperacopy.add(llamado);
         }
-        
+        if(atencion.size() > 0)
+            atencion.remove(atencion.size()-1);
         res.setEnAtencion(atencion);
         res.setProximos(esperacopy);
         
